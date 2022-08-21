@@ -1,0 +1,15 @@
+{{ partial "header.html" . }}
+
+<main class="content" role="main">
+
+  {{ if .Content }}
+
+  {{ .Content }}
+
+  {{ end }}
+
+  {{ partial "taxonomy-squares.html" . }}
+
+</main>
+
+{{ partial "footer.html" . }}

@@ -2,8 +2,10 @@
 <hr>
 <div>
   <h4>References:</h4>
+  <ul>
   {{ range .Params.refs }}
-    <ul>{{ . }}</ul>
+    <li>{{ . | markdownify }}</li>
   {{ end }}
+  </ul>
 </div>
 {{ end }}

@@ -1,0 +1,23 @@
+<!-- Original version: https://gohugo.io/templates/taxonomy-templates/#example-list-all-taxonomies-terms-and-assigned-content -->
+
+<section>
+  {{ range $taxonomy_term, $taxonomy := .Site.Taxonomies }}
+      {{ with $.Site.GetPage (printf "/%s" $taxonomy_term) }}
+          <div><div  style="text-transform:capitalize"><h2>{{ $taxonomy_term }}</h2></div>
+              <ul class="taxonomy-grid">
+                  {{ range $key, $value := $taxonomy }}
+                      {{ with $.Site.GetPage (printf "/%s/%s" $taxonomy_term $key)}}
+                          
+                          <li>
+                              <a href="{{ .Permalink }}" style="text-decoration:none">{{ end }}
+                                  <div style="width:150px;height:150px;border-radius:15px;background-color:{{ $.Site.Params.backgroundColor }}; display:flex; justify-content:center; align-items:center">
+                                      <p style="color:{{ $.Site.Params.textColor }}">{{ $key }} <br> ({{ .Count }})</p>
+                                    </div>
+                              </a>
+                          </li>
+                  {{ end }}
+              </ul>
+          </div>
+      {{ end }}
+  {{ end }}
+</section>
