@@ -1,8 +1,9 @@
 ---
-title: ''
+title: ""
 author: 
-date: ''
+date: ""
 slug: 
+draft: true
 toc: true
 categories:
   - 
@@ -11,6 +12,8 @@ tags:
 keys:
   - 
 refs:
+  - 
+changes:
   - 
 ---
 

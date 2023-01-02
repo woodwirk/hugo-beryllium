@@ -12,23 +12,6 @@
     </div>
   </article>
   {{ end }}
-  <!-- <div class="archive">
-    {{ $pages := .Pages }}
-    {{ if .IsHome }}
-    {{ $pages = .Site.RegularPages }}
-    {{ end }}
-    {{ range (where $pages "Section" "!=" "").GroupBy "Section" }}
-    <h2 class="archive-title">{{ title .Key }}</h2>
-    {{ range .Pages.ByTitle }}
-    <article class="archive-item">
-      <a href="{{ .RelPermalink }}" class="archive-item-link">{{ .Title }}</a>
-      <span class="archive-item-date">
-        {{ .Date.Format "2006-01-02" }}
-      </span>
-    </article>
-    {{ end }}
-    {{ end }}
-  </div> -->
 
   <div class="archive">
     {{ $pages := .Pages }}
@@ -48,17 +31,6 @@
       {{ end }}
   </ul>
   </div>
-
-  
-
-
-  <!-- {{ if .Content }}
-
-  {{ .Content }}
-
-  {{ end }}
-
-  {{ partial "taxonomy-squares.html" . }} -->
 
 </main>
 

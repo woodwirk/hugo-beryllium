@@ -1,7 +1,7 @@
 {{ if .Params.refs }}
 <hr>
-<div>
-  <h4>References:</h4>
+<div style="font-size: smaller;">
+  <h2>References:</h4>
   <ul>
   {{ range .Params.refs }}
     <li>{{ . | markdownify }}</li>

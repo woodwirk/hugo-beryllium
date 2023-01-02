@@ -1,7 +1,7 @@
 baseurl = "/"
 languageCode = "en-us"
 title = "A Hugo website"
-theme = "hugo-lithium-notes"
+theme = "hugo-beryllium"
 googleAnalytics = ""
 disqusShortname = ""
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit\\.md$", "\\.utf8\\.md$", "ignore-hugo"]
@@ -30,14 +30,14 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit\\.md$", "\\.utf8\
     MathJaxVersion = "2.7.5"
 
     # path to the favicon, under "static"
-    favicon = "favicon.ico"
+    favicon = "icons/favicon.ico"
 
     # taxonomy squares
     backgroundColor = "#CBF8DF"
     textColor = "#555555"
 
     [params.logo]
-    url = "logo.png"
+    url = "icons/home_FILL0_wght400_GRAD0_opsz48.svg"
     width = 50
     height = 50
     alt = "Logo"

@@ -1,11 +1,33 @@
-# Hugo Lithium (for notes)
+# Hugo Beryllium
 
-This is a notes-oriented version of [hugo-lithium-search](https://github.com/woodwirk/hugo-lithium-search).
+This theme started out as a derivative of [the `hugo-lithium` theme from Yihui Xie](https://github.com/yihui/hugo-lithium). I changed the intent enough that I thought it was no longer lithium, so here it is: `hugo-beryllium`.
 
-> This is a modified version of the Blogdown-optimized hugo-lithium theme. It includes search functionality via fuse.js and implements it statically, so that the feature works offline.
+## Features
+- Offline search (`fuse.js`)
+- Offline fonts updated
+- Visual aids for content grouping (sections, tags, categories, or other taxonomies)
+    - Color specified in config file
+- Front matter references listed on content pages
 
----
+### Changes
+- Offline fonts updated. Only Lato for content but Merriweather retained
+- Logo can be referenced from anywhere under `static`
 
+### Features from `hugo-lithium`
+
+- Blog
+- Responsive
+- Disqus
+- Google Analytics
+- Google web fonts (Merriweather and Lato)
+- MathJax
+- highlight.js
+- Support for [MathJax](https://bookdown.org/yihui/blogdown/output-format.html) (for rendering LaTeX math expressions) and highlight.js (for syntax highlighting).
+    - For both libraries, you can specify the CDN host (e.g., CloudFlare, BootCDN, ...).
+    - For highlight.js, you can specify additional languages (e.g., `r`, `yaml`, `tex`, ...).
+- Google web fonts (embedded in the theme so that visitors from countries where Google is banned can still see the typefaces).
+- Improved Hugo's built-in Disqus template, so that you can actually view the comments even when you are previewing the website locally.
+- Replaced the variable `.Permalink` with `.RelPermalink`, and function `absURL` with `relURL` where necessary. It is a bad idea to use full absolute links (with the protocol and domain) in general. For example, `.Permalink` and `absURL` may generate URLs of the form `http://www.example.com/foo/bar.html`, but `/foo/bar.html` is more portable.
 
 ## License
 

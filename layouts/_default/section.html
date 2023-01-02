@@ -12,11 +12,27 @@
     </div>
   </article>
   {{ end }}
+
+  {{ if .Sections }}
+  <section>
+    <ul class="taxonomy-grid">
+      {{ range .Sections }}
+      <li>
+        <a href="{{ .RelPermalink }}" style="text-decoration:none">
+          <div
+            style="width:150px;height:150px;border-radius:15px;background-color:{{ $.Site.Params.backgroundColor }}; display:flex; justify-content:center; align-items:center">
+            <p style="color:{{ $.Site.Params.textColor }}">{{ title .Title }} <br> ({{ len .Pages }})</p>
+          </div>
+        </a>
+      </li>
+      <script>console.log({{ .Permalink }});</script>
+      {{ end }}
+    </ul>
+  </section>
+  {{ end }}
+
   <div class="archive">
-    {{ $pages := .Pages }}
-    {{ if .IsHome }}
-    {{ $pages = .Site.RegularPages }}
-    {{ end }}
+    {{ $pages := .RegularPages }} <!-- To avoid showing list pages -->
     {{ range (where $pages "Section" "!=" "").GroupByDate "2006" }}
     <h2 class="archive-title">{{ .Key }}</h2>
     {{ range .Pages }}
@@ -35,8 +51,6 @@
     {{ end }}
     {{ end }}
   </div>
-
-  {{ partial "references.html" . }}
 
 </main>
 
