@@ -16,7 +16,7 @@
   {{ if .Sections }}
   <section>
     <ul class="taxonomy-grid">
-      {{ range .Sections }}
+      {{ range .Sections.ByTitle }}
       <li>
         <a href="{{ .RelPermalink }}" style="text-decoration:none">
           <div

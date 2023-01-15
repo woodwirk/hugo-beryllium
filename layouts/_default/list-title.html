@@ -13,7 +13,7 @@
   </article>
   {{ end }}
     <div class="archive">
-        <h2 class="archive-title">{{ .Section }}</h2>
+        <h2 class="archive-title">{{ .Title }}</h2>
     {{ $pages := .Pages }}
     {{ if .IsHome }}
     {{ $pages = .Site.RegularPages }}
