@@ -34,7 +34,6 @@
   <div class="archive">
     {{ $pages := .RegularPages }} <!-- To avoid showing list pages -->
     {{ range (where $pages "Section" "!=" "").GroupByDate "2006" }}
-    <h2 class="archive-title">{{ .Key }}</h2>
     {{ range .Pages }}
     <article class="archive-item">
       <a href="{{ .RelPermalink }}" class="archive-item-link">
@@ -51,6 +50,18 @@
     {{ end }}
     {{ end }}
   </div>
+
+  <!-- TODO: Show content if less than 5 pages -->
+  <!-- {{ if (and (lt (len $pages) 5) (not .Sections) ) }}
+  <div class="archive">
+    {{ range .RegularPages }}
+    
+      {{ .Render "single-min" }}
+
+    <hr>
+    {{ end }}
+  </div>
+  {{ end }} -->
 
 </main>
 

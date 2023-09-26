@@ -1,0 +1,19 @@
+{{ with .Params.keys }}
+
+{{ if not (eq (index . 0) "") }}
+<div>
+{{ if gt (len .)  1 }}
+<ul>
+{{ range . }}
+<li>{{ . }}</li>
+{{ end }}
+</ul>
+
+{{ else }}
+{{ index . 0 }}
+{{ end }}
+</div>
+{{ end }}
+
+<hr>
+{{ end }}
