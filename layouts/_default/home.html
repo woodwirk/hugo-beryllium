@@ -20,22 +20,25 @@
     {{ end }}
     <ul class="taxonomy-grid">
       {{ range (where $pages "Section" "!=" "").GroupBy "Section" }}
-              
+        {{ $var := .Key }}
+        {{ $pageCount := len .Pages }}
+        {{ range site.Sections }} {{ if eq .Section $var }}
               <li>
-                  <a href="/{{ .Key }}" style="text-decoration:none">
+                  <a href="{{ .RelPermalink }} " style="text-decoration:none">
                       <div style="width:150px;height:150px;border-radius:15px;background-color:{{ $.Site.Params.backgroundColor }}; display:flex; justify-content:center; align-items:center">
-                          <p style="color:{{ $.Site.Params.textColor }}">{{ title .Key }} <br> ({{ len .Pages }})</p>
+                          <p style="color:{{ $.Site.Params.textColor }}">{{ title $var }} <br> ({{ $pageCount }})</p>
                         </div>
                   </a>
               </li>
+        {{ end }} {{ end }}
       {{ end }}
   </ul>
 
-  {{ if $.Site.Params.updated }}
+  {{ if $.Site.Params.updated_since }}
   <hr>
   <h2 class="archive-title" style="text-align: center;">Recent updates</h2>
 
-  {{ range (where $pages ".Date" ">=" ($.Site.Params.updated | time.AsTime)).GroupBy "Section" }}
+  {{ range (where $pages ".Date" ">=" ($.Site.Params.updated_since | time.AsTime)).GroupBy "Section" }}
     <h2 class="archive-title">{{ title .Key }}</h2>
     {{ range .Pages }}
     <article class="archive-item">

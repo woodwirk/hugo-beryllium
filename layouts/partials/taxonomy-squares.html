@@ -9,7 +9,7 @@
                       {{ with $.Site.GetPage (printf "/%s/%s" $taxonomy_term $key)}}
                           
                           <li>
-                              <a href="{{ .Permalink }}" style="text-decoration:none">{{ end }}
+                              <a href="{{ .RelPermalink }}" style="text-decoration:none">{{ end }}
                                   <div style="width:150px;height:150px;border-radius:15px;background-color:{{ $.Site.Params.backgroundColor }}; display:flex; justify-content:center; align-items:center">
                                       <p style="color:{{ $.Site.Params.textColor }}">{{ $key }} <br> ({{ .Count }})</p>
                                     </div>
