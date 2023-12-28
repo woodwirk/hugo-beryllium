@@ -8,6 +8,7 @@ This theme started out as a derivative of [the `hugo-lithium` theme from Yihui X
 - Visual aids for content grouping (sections, tags, categories, or other taxonomies)
     - Color specified in config file
 - Front matter references listed on content pages
+- Media features (photo gallery via PhotoSwipe)
 
 ### Changes
 - Offline fonts updated. Only Lato for content but Merriweather retained
@@ -32,3 +33,36 @@ This theme started out as a derivative of [the `hugo-lithium` theme from Yihui X
 ## License
 
 The original themes were released under the MIT License by [Jonathan Rutheiser](https://github.com/jrutheiser/hugo-lithium-theme/blob/master/LICENSE.md) and [Yihui Xie](https://github.com/yihui/hugo-lithium/blob/master/LICENSE.md). This version is also released under the MIT License and includes the unmodified fuse.js software licensed under the Apache 2.0 License.
+
+# Usage
+
+## Demo the example site
+
+From the `hugo-beryllium` folder:
+
+```sh
+hugo server --source="exampleSite" --themesDir="../../"
+```
+
+Build:
+
+```sh
+hugo -d ../docs --minify --source="exampleSite" --themesDir="../../" 
+```
+
+## Folders
+
+By default, all folders with content (sections) will show up on the home page grid. Sub-folders (sub-sections) will appear for each section page.
+
+## Content
+
+See the example site's "Hugo Usage" page or Hugo's documentation of [page bundles](https://gohugo.io/content-management/page-bundles/) for content organization. 
+
+Photos, audio, and PDF media are supported, as demonstrated in the example site.
+
+*If pages aren't showing at all on the site, check that the page you want to publish is not a draft.*
+
+## Settings
+
+- Updated since
+- Taxonomy colors
