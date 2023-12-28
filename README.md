@@ -47,7 +47,7 @@ hugo server --source="exampleSite" --themesDir="../../"
 Build:
 
 ```sh
-hugo -d ../docs --baseURL https://woodwirk.github.io/hugo-beryllium/ --minify --source="exampleSite" --themesDir="../../" 
+hugo -d ../docs --baseURL https://woodwirk.github.io/hugo-beryllium/ --minify --source="exampleSite" --themesDir="../../"
 ```
 
 ## Folders
