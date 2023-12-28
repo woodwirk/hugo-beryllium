@@ -1,0 +1,2 @@
+- Using Hugo variables in JS
+    - [**https://discourse.gohugo.io/t/variables-inside-javascript/39086/4**](https://discourse.gohugo.io/t/variables-inside-javascript/39086/4)

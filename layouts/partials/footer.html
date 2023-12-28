@@ -69,6 +69,13 @@
       <!-- Include fuse here for offline searching -->
   <script src="{{ relURL "/js/fuse.js" }}"></script>
   
-  <script src="{{ relURL "/js/features.js" }}"></script>
+  <!-- Legacy -->
+  <!-- <script src="{{ relURL "/js/features.js" }}"></script> -->
+
+  <!-- BaseURL-compatible -->
+  {{- $js := resources.Get "js/features.js" -}}
+  {{- $opts := dict "params" (dict "baseurl" .Site.BaseURL) -}}
+  {{- $js = $js | js.Build $opts -}}
+  <script src="{{ $js.RelPermalink }}"></script>
   </body>
 </html>
