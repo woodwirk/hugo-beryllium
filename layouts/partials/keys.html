@@ -1,19 +1,16 @@
 {{ with .Params.keys }}
+<!-- <script>console.log({{ . }});</script> -->
 
-{{ if not (eq (index . 0) "") }}
+{{ if gt (len .)  0 }}
 <div>
-{{ if gt (len .)  1 }}
-<ul>
+Keys:
+<ul style="margin-top: 0%;">
 {{ range . }}
 <li>{{ . }}</li>
 {{ end }}
 </ul>
-
-{{ else }}
-{{ index . 0 }}
-{{ end }}
+<hr style="margin-top: 0px; margin-bottom: 0px;">
 </div>
 {{ end }}
 
-<hr>
 {{ end }}

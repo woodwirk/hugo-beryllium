@@ -1,0 +1,91 @@
+{{ partial "header.html" . }}
+
+<main class="content recipe-template" role="main">
+
+    <article class="article">
+        <span class="article-duration">{{ .ReadingTime }} min read</span>
+
+        <h1 class="article-title">{{ .Title }}</h1>
+
+        <span class="article-date">{{ .Date.Format "2006-01-02" }}</span>
+
+        {{ partial "keys.html" . }}
+
+        {{ partial "toc.html" . }}
+
+        <div class="recipe-content">
+            <!-- Include a components list if provided -->
+            {{ if .Params.components }}
+            <div class="sidebar">
+                {{ if .Params.components_title }}
+                <h2 style="margin-bottom: 0px;">{{ title .Params.components_title}}</h2>
+                {{ else }}
+                <h2 style="margin-bottom: 0px;"> Elements </h2>
+                {{ end }}
+
+                <!-- If not a slice (array/bullet list), there are multiple items that list components -->
+                {{ if not (reflect.IsSlice .Params.components) }}
+                {{ range $item, $componentsList := .Params.components }}
+                <div>
+                    {{ title $item }}
+                    <ul>
+                        {{ range . }}
+                        <script>console.log({{ . }});</script>
+                        {{ if reflect.IsMap . }}
+                        <!-- If the length is 1, it's listed as key:value -->
+                        {{ if eq (len .) 1}}
+                        {{ range $component, $qty := . }}
+                        <li>{{ title $component }}: {{ $qty }}</li>
+                        {{ end }}
+                        <!-- Otherwise, it's listed with component, qty, units, etc -->
+                        {{ else }}
+                        <!-- TODO: Process appropriately -->
+                        <li>{{ . }}</li>
+                        {{ end }}
+                        <!-- If no key:value pair, it's a simple entry -->
+                        {{ else }}
+                        <li>{{ title . }}</li>
+                        {{ end }}
+                        {{ end }}
+                    </ul>
+                </div>
+                {{ end }}
+
+                <!-- If not multiple items with components, use simple components list (one list with all items) -->
+                {{ else }}
+                <div>
+                    <ul style="margin-top: 0px;">
+                    {{ range $index, $item := .Params.components }}                    
+                        {{ if reflect.IsMap . }}
+                            {{ range $component, $qty := . }}
+                            <li>{{ title $component }}: {{ $qty }}</li>
+                            {{ end }}
+                        {{ else }}
+                            <li>{{ title . }}</li>
+                        {{ end }}
+                    {{ end }}
+                    </ul>
+                </div>
+
+                <!-- End of component list type check -->
+                {{ end }}
+
+                <hr>
+
+            </div>
+            <!-- End components section -->
+            {{ end }}
+
+            <div class="article-content">
+                {{ .Content }}
+            </div>
+        </div>
+    </article>
+
+    {{ partial "references.html" . }}
+
+    {{ partial "disqus.html" .}}
+
+</main>
+
+{{ partial "footer.html" . }}

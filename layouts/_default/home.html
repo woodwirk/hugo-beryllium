@@ -1,13 +1,13 @@
 {{ partial "header.html" . }}
 
-<main class="content" role="main">
+<main class="content home-template" role="main">
 
   {{ if .Content }}
-  <article class="article" style="text-align: center;">
+  <article class="article">
     {{ if .Title }}
-    <h1 class="article-title">{{ .Title }}</h1>
+    <h1 class="article-title" style="text-align: center;">{{ .Title }}</h1>
     {{ end }}
-    <div class="article-content">
+    <div class="article-content" style="text-align: start;">
       {{ .Content }}
     </div>
   </article>
