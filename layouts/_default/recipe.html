@@ -18,7 +18,7 @@
             {{ if .Params.components }}
             <div class="sidebar">
                 {{ if .Params.components_title }}
-                <h2 style="margin-bottom: 0px;">{{ title .Params.components_title}}</h2>
+                <h2 style="margin-bottom: 0px;">{{ title .Params.components_title }}</h2>
                 {{ else }}
                 <h2 style="margin-bottom: 0px;"> Elements </h2>
                 {{ end }}
@@ -35,7 +35,7 @@
                         <!-- If the length is 1, it's listed as key:value -->
                         {{ if eq (len .) 1}}
                         {{ range $component, $qty := . }}
-                        <li>{{ title $component }}: {{ $qty }}</li>
+                        <li>{{ title $component | markdownify }}: {{ $qty | markdownify }}</li>
                         {{ end }}
                         <!-- Otherwise, it's listed with component, qty, units, etc -->
                         {{ else }}
@@ -44,7 +44,7 @@
                         {{ end }}
                         <!-- If no key:value pair, it's a simple entry -->
                         {{ else }}
-                        <li>{{ title . }}</li>
+                        <li>{{ . | markdownify }}</li>
                         {{ end }}
                         {{ end }}
                     </ul>
@@ -58,10 +58,10 @@
                     {{ range $index, $item := .Params.components }}                    
                         {{ if reflect.IsMap . }}
                             {{ range $component, $qty := . }}
-                            <li>{{ title $component }}: {{ $qty }}</li>
+                            <li>{{ title $component | markdownify }}: {{ $qty | markdownify}}</li>
                             {{ end }}
                         {{ else }}
-                            <li>{{ title . }}</li>
+                            <li>{{ . | markdownify}}</li>
                         {{ end }}
                     {{ end }}
                     </ul>
