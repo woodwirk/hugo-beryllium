@@ -2,7 +2,7 @@
 title: ""
 author: 
 date: ""
-slug: 
+# slug: 
 draft: true
 toc: true
 categories:
@@ -13,7 +13,7 @@ keys:
   - 
 refs:
   - 
-changes:
-  - 
+# changes:
+#   - 
 ---
 

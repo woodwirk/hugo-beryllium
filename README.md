@@ -9,6 +9,7 @@ This theme started out as a derivative of [the `hugo-lithium` theme from Yihui X
     - Color specified in config file
 - Front matter references listed on content pages
 - Media features (photo gallery via PhotoSwipe)
+- Recipe content layout
 
 ### Changes
 - Offline fonts updated. Only Lato for content but Merriweather retained
@@ -36,7 +37,9 @@ The original themes were released under the MIT License by [Jonathan Rutheiser](
 
 # Usage
 
-## Demo the example site
+Typical Hugo theme usage. View the example site and docs here: [**https://woodwirk.github.io/hugo-beryllium**](https://woodwirk.github.io/hugo-beryllium)
+
+## Demo the example site locally
 
 From the `hugo-beryllium` folder:
 
@@ -49,20 +52,3 @@ Build:
 ```sh
 hugo -d ../docs --baseURL https://woodwirk.github.io/hugo-beryllium/ --minify --source="exampleSite" --themesDir="../../"
 ```
-
-## Folders
-
-By default, all folders with content (sections) will show up on the home page grid. Sub-folders (sub-sections) will appear for each section page.
-
-## Content
-
-See the example site's "Hugo Usage" page or Hugo's documentation of [page bundles](https://gohugo.io/content-management/page-bundles/) for content organization. 
-
-Photos, audio, and PDF media are supported, as demonstrated in the example site.
-
-*If pages aren't showing at all on the site, check that the page you want to publish is not a draft.*
-
-## Settings
-
-- Updated since
-- Taxonomy colors
