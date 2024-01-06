@@ -1,9 +1,23 @@
 ---
 title: File structure
+date: '2024-01-05'
 ---
 
+## Folders
 
-Here's an example of how you might organize these files under your main folder:
+By default, all folders with content (sections) will show up on the home page grid. Sub-folders (sub-sections) will appear for each section page.
+
+## Content
+
+See the example site's "Hugo Usage" page or Hugo's documentation of [page bundles](https://gohugo.io/content-management/page-bundles/) for content organization. 
+
+Photos, audio, and PDF media are supported, as demonstrated in the example site media-examples folder.
+
+*If pages aren't showing at all on the site, check that the page you want to publish is not a draft.*
+
+## Example
+
+Here's an example of how you might organize your site files under your main folder:
 
 - `/config.toml`
     - Name of site, squares color, icon, etc
