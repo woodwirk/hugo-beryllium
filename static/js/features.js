@@ -114,7 +114,7 @@
               threshold: 0.1
             });
           }, false);
-          request.open('GET', '/index.json');
+          request.open('GET', 'index.json');
           request.send(null)
         }
       }
