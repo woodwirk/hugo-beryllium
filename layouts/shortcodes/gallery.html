@@ -1,17 +1,26 @@
 {{ with .Get "title" }}
-  <h4>{{ . }}</h4>
+<h4>{{ . }}</h4>
 {{ end }}
-  <div class="gallery" itemscope itemtype="http://schema.org/ImageGallery">
-  {{/*<!-- {{- range (.Page.Resources.Match (printf "%s*" (.Get "folder"))) }} {{ index (last 1 (split .Title "-")) 0  }} -->*/}}
+<div class="gallery" itemscope itemtype="http://schema.org/ImageGallery">
+  <!-- Allowable image formats: -->
+  {{ $ptypes := slice ".png" ".jpeg" ".jpg" ".tiff" ".tif" ".bmp" ".gif" }}
+  
+  <!-- Resize and add to gallery only if in the allowable types -->
   {{- range (.Page.Resources.Match (printf "%s*" (.Get "folder"))) }}
+  
+  {{ if in $ptypes (path.Ext .RelPermalink) }}
   {{ $thumbnail := .Resize "320x" }}
-    <figure itemscope itemtype="http://schema.org/ImageObject" class="image gallery-item">
-    <a href="{{ .RelPermalink }}" itemprop="contentUrl" data-size="{{ .Width }}x{{ .Height }}" >
+  <figure itemscope itemtype="http://schema.org/ImageObject" class="image gallery-item">
+    <a href="{{ .RelPermalink }}" itemprop="contentUrl" data-size="{{ .Width }}x{{ .Height }}">
       <img src="{{ $thumbnail.RelPermalink }}" itemprop="thumbnail" alt="galleryImage" class="galleryImage" />
     </a>
-    <figcaption itemprop="caption description">
-      <span itemprop="copyrightHolder"></span>
+    <!-- Hide captions but allow showing in photo viewer -->
+    <!-- TODO: populate dynamically from content provided -->
+    <figcaption itemprop="caption description" style="display: none;">
+      <!-- Caption here from reading JSON associated with .RelPermalink, if description exists -->
+      <span itemprop="copyrightHolder" style="display: none;"></span>
     </figcaption>
-    </figure> 
+  </figure>
   {{ end }}
-  </div>
+  {{ end }}
+</div>

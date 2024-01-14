@@ -15,6 +15,6 @@ Snippet:
 { {< gallery folder="public-domain" >} }
 ```
 
-In order to display the shortcode above, additional spacing was necessary. The real shortcode should have adjacent braces like ``{{`` and ``}}``.
+In order to display the shortcode above, additional spacing was necessary. The real shortcode should have braces without a middle space, like ``{{`` and ``}}``.
 
 {{< gallery folder="public-domain" >}}
