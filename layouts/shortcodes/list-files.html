@@ -1,0 +1,9 @@
+<div class="file-list">
+    <ul>
+    {{- range (.Page.Resources.Match (printf "%s*" (.Get "folder"))) }}
+    <li>
+    <a href = "{{ .RelPermalink }}" >{{ path.Base .RelPermalink }}</a>
+    </li>
+    {{ end }}
+    </ul>
+</div>
