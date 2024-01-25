@@ -42,10 +42,12 @@ Includes a taxonomy-style list of subsections.
 
 # List-section
 
-Manually applied.
+Manually applied to the `_index.md` of a branch bundle.
 
 ```
 layout: list-section
 ```
 
-Includes each subsection under a header, followed by an archive list format of content.
+Includes each subsection in the taxonomy squares format, followed by content in an archive list format.
+
+To include content under a subsection, create a branch bundle (a folder with `_index.md`) under the main branch/section.

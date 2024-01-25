@@ -17,6 +17,7 @@
   <section>
     <ul class="taxonomy-grid">
       {{ range .Sections.ByTitle }}
+      {{ if len .Pages }}
       <li>
         <a href="{{ .RelPermalink }}" style="text-decoration:none">
           <div
@@ -25,6 +26,7 @@
           </div>
         </a>
       </li>
+      {{ end }}
       {{ end }}
     </ul>
   </section>

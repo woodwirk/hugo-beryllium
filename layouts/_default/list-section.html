@@ -16,6 +16,7 @@
   <div class="archive">
   {{ if .Sections }}
       {{ range .Sections.ByWeight }}
+      {{ if len .Pages }}
       <h2 class="archive-title">{{ .Title }}</h2>
       {{ range .Pages.ByTitle }}
     <article class="archive-item">
@@ -29,6 +30,7 @@
       <span class="article-duration">{{ .ReadingTime }} min read</span>
     </article>
     {{ end }}
+      {{ end }}
       {{ end }}
   {{ end }}
   </div>

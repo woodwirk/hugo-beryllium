@@ -381,7 +381,8 @@ blockquote p {
 }
 
 .article-content{
-  flex: 2;
+  flex: 3 1 0;
+  min-width: 0;
 }
 
 .sidebar {
@@ -389,7 +390,7 @@ blockquote p {
   padding: 0vw 2.5vh 5vw 2.5vh;
   margin-right: 2vw;
   top: 0;
-  flex: 1;
+  flex: 0 0 30;
   background-color: #f1f1f1;
   position: -webkit-sticky;
   position: sticky;
