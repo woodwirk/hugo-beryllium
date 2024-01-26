@@ -17,20 +17,19 @@
     {{ $pages := .Pages }}
     {{ if .IsHome }}
     {{ $pages = .Site.RegularPages }}
+    <script>console.log([{{ range $pages }} {{.RelPermalink}} , {{ end }}]);</script>
     {{ end }}
     <ul class="taxonomy-grid">
-      {{ range (where $pages "Section" "!=" "").GroupBy "Section" }}
-        {{ $var := .Key }}
-        {{ $pageCount := len .Pages }}
-        {{ range site.Sections }} {{ if eq .Section $var }}
+      {{ range .Sections }}
+      {{ if len .RegularPagesRecursive }}
               <li>
                   <a href="{{ .RelPermalink }} " style="text-decoration:none">
                       <div style="width:150px;height:150px;border-radius:15px;background-color:{{ $.Site.Params.backgroundColor }}; display:flex; justify-content:center; align-items:center">
-                          <p style="color:{{ $.Site.Params.textColor }}">{{ title $var }} <br> ({{ $pageCount }})</p>
+                          <p style="color:{{ $.Site.Params.textColor }}">{{ title .Title }} <br> ({{ len .RegularPagesRecursive }})</p>
                         </div>
                   </a>
               </li>
-        {{ end }} {{ end }}
+      {{ end }}
       {{ end }}
   </ul>
 

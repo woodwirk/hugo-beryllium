@@ -12,17 +12,18 @@
     </div>
   </article>
   {{ end }}
+  <script>console.log([{{.Title}} , ]);</script>
 
   {{ if .Sections }}
   <section>
     <ul class="taxonomy-grid">
-      {{ range .Sections.ByTitle }}
-      {{ if len .Pages }}
+      {{ range .Sections }}
+      {{ if len .RegularPagesRecursive }}
       <li>
         <a href="{{ .RelPermalink }}" style="text-decoration:none">
           <div
             style="width:150px;height:150px;border-radius:15px;background-color:{{ $.Site.Params.backgroundColor }}; display:flex; justify-content:center; align-items:center">
-            <p style="color:{{ $.Site.Params.textColor }}">{{ title .Title }} <br> ({{ len .Pages }})</p>
+            <p style="color:{{ $.Site.Params.textColor }}">{{ title .Title }} <br> ({{ len .RegularPagesRecursive }})</p>
           </div>
         </a>
       </li>
