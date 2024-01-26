@@ -44,8 +44,10 @@
           {{ .RelPermalink }}
         {{ end }}
       </a>
+      {{ with .Date }}
       <span class="archive-item-date">
-        {{ .Date.Format "2006-01-02" }}
+        {{ (.).Format "2006-01-02" }}
+      {{ end }}
       </span>
     </article>
     {{ end }}

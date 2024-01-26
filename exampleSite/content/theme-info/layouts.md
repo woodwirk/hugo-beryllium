@@ -40,6 +40,8 @@ There are three styles of recipe layouts, as shown by the different front matter
 
 Includes a taxonomy-style list of subsections.
 
+Subsections must be at the top level of the folder structure or contain an `_index.md` to be included in the taxonomy squares format.
+
 # List-section
 
 Manually applied to the `_index.md` of a branch bundle.
