@@ -1,8 +1,15 @@
+# System
+.DS_Store
+
+# VS Code
 .vscode
 
+# Hugo generated
+exampleSite/resources/
+public
+
+# Blogdown use
 .Rproj.user
 .Rhistory
 .RData
 .Ruserdata
-
-exampleSite/resources/
