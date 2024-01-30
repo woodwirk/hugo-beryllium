@@ -116,7 +116,7 @@ import params from "@params";
                 threshold: 0.1
               });
             }, false);
-            request.open('GET', params.baseurl.concat('/index.json'));
+            request.open('GET', params.baseurl.concat('index.json'));
             request.send(null)
           }
         }
