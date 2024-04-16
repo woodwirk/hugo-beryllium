@@ -19,6 +19,7 @@ refs:
   - https://gohugo.io/getting-started/quick-start/
 # origin: person/place/event
 date: '2024-01-01'
+type: recipe-moderate
 ---
 
 # Instructions

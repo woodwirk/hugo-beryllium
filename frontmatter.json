@@ -1,0 +1,153 @@
+{
+  "$schema": "https://frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "recipe-simple",
+      "pageBundle": false,
+      "fields": [
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "Draft",
+          "name": "draft",
+          "type": "draft"
+        },
+        {
+          "title": "type",
+          "name": "type",
+          "type": "string",
+          "default": "recipe-simple",
+          "hidden": true
+        },
+        {
+          "title": "layout",
+          "name": "layout",
+          "type": "string",
+          "default": "recipe",
+          "hidden": true
+        },
+        {
+          "title": "Date",
+          "name": "date",
+          "type": "datetime",
+          "default": "{{now}}",
+          "dateFormat": "yyyy-MM-dd",
+          "hidden": true
+        },
+        {
+          "title": "Categories",
+          "name": "categories",
+          "type": "categories"
+        },
+        {
+          "title": "Tags",
+          "name": "tags",
+          "type": "tags"
+        },
+        {
+          "title": "Ingredients",
+          "name": "components",
+          "type": "list",
+          "default": [
+            "Item 1",
+            "Item 2"
+          ]
+        },
+        {
+          "title": "References",
+          "name": "refs",
+          "type": "list",
+          "default": ""
+        },
+        {
+          "title": "Origin (person/place)",
+          "name": "origin",
+          "type": "string",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "recipe-moderate",
+      "pageBundle": true,
+      "fields": [
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "Draft",
+          "name": "draft",
+          "type": "draft"
+        },
+        {
+          "title": "layout",
+          "name": "layout",
+          "type": "string",
+          "default": "recipe",
+          "hidden": true
+        },
+        {
+          "title": "Date",
+          "name": "date",
+          "type": "datetime",
+          "default": "{{now}}",
+          "dateFormat": "yyyy-MM-dd",
+          "hidden": true
+        },
+        {
+          "title": "Categories",
+          "name": "categories",
+          "type": "categories"
+        },
+        {
+          "title": "Tags",
+          "name": "tags",
+          "type": "tags"
+        },
+        {
+          "title": "Ingredients",
+          "name": "components",
+          "type": "list",
+          "default": [
+            "Item 1: Quantity (remove quotes)",
+            "Item 2: Quantity"
+          ]
+        },
+        {
+          "title": "References",
+          "name": "refs",
+          "type": "list",
+          "default": ""
+        },
+        {
+          "title": "Origin (person/place)",
+          "name": "origin",
+          "type": "string",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "frontMatter.content.snippets": {
+    "Image snippet": {
+      "description": "Image with caption",
+      "body": "{{< caption \"[[&mediaUrl]]\" \"[[caption]]\" >}}",
+      "isMediaSnippet": true
+    }
+  },
+  "frontMatter.framework.id": "hugo",
+  "frontMatter.content.publicFolder": "static",
+  "frontMatter.preview.host": "http://localhost:1313",
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "content",
+      "path": "[[workspace]]/exampleSite/content"
+    }
+  ],
+  "frontMatter.framework.startCommand": "hugo server -D -F"
+}
