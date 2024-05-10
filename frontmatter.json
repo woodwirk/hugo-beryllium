@@ -2,8 +2,9 @@
   "$schema": "https://frontmatter.codes/frontmatter.schema.json",
   "frontMatter.taxonomy.contentTypes": [
     {
-      "name": "recipe-simple",
+      "name": "default",
       "pageBundle": false,
+      "previewPath": null,
       "fields": [
         {
           "title": "Title",
@@ -11,36 +12,24 @@
           "type": "string"
         },
         {
-          "title": "Draft",
-          "name": "draft",
-          "type": "draft"
+          "title": "Author",
+          "name": "author",
+          "type": "string"
         },
         {
-          "title": "type",
-          "name": "type",
-          "type": "string",
-          "default": "recipe-simple",
-          "hidden": true
-        },
-        {
-          "title": "layout",
-          "name": "layout",
-          "type": "string",
-          "default": "recipe",
-          "hidden": true
-        },
-        {
-          "title": "Date",
+          "title": "Publishing date",
+          "description": "Date that will be listed for the content.",
           "name": "date",
           "type": "datetime",
           "default": "{{now}}",
           "dateFormat": "yyyy-MM-dd",
-          "hidden": true
+          "isPublishDate": true
         },
         {
-          "title": "Categories",
-          "name": "categories",
-          "type": "categories"
+          "title": "Draft",
+          "description": "If in draft mode, this page will not be included in the main site unless specified.",
+          "name": "draft",
+          "type": "draft"
         },
         {
           "title": "Tags",
@@ -48,87 +37,132 @@
           "type": "tags"
         },
         {
-          "title": "Ingredients",
+          "title": "Categories",
+          "name": "categories",
+          "type": "categories"
+        },
+        {
+          "title": "Layout",
+          "description": "Visual appearance of the content. If unsure, use the default 'single'.",
+          "name": "layout",
+          "type": "choice",
+          "choices": [
+            "single",
+            "recipe",
+            "section",
+            "list-section",
+            "list",
+            "list-title",
+            "home",
+            "about"
+          ]
+        },
+        {
+          "title": "Table of contents",
+          "description": "Include a table of contents if content is long enough.",
+          "name": "toc",
+          "type": "boolean"
+        },
+        {
+          "title": "Components Title",
+          "description": "Name to display above components list. Ex: Ingredients.",
+          "name": "components_title",
+          "type": "string",
+          "when": {
+            "fieldRef": "layout",
+            "operator": "contains",
+            "value": "recipe",
+            "caseSensitive": false
+          }
+        },
+        {
+          "title": "Components",
+          "description": "List of components for recipe sidebar. Can also be specified with more advanced formats.",
           "name": "components",
           "type": "list",
           "default": [
             "Item 1",
             "Item 2"
-          ]
+          ],
+          "when": {
+            "fieldRef": "layout",
+            "operator": "contains",
+            "value": "recipe",
+            "caseSensitive": false
+          }
+        },
+        {
+          "title": "Origin (person/place)",
+          "description": "Where did you get the idea for this?",
+          "name": "origin",
+          "type": "string",
+          "required": false
+        },
+        {
+          "title": "Key Points",
+          "description": "Highlights. Shown at the top of the page.",
+          "name": "keys",
+          "type": "list",
+          "default": ""
         },
         {
           "title": "References",
+          "description": "Links to references. Shown at the bottom of the page.",
           "name": "refs",
           "type": "list",
           "default": ""
         },
         {
-          "title": "Origin (person/place)",
-          "name": "origin",
-          "type": "string",
+          "title": "Internal Notes",
+          "description": "You can include changes or log notes here. They will not be shown in the content unless specified manually.",
+          "name": "notes",
+          "type": "list",
+          "default": "",
+          "required": false
+        },
+        {
+          "title": "Photo Gallery",
+          "name": "gallery",
+          "description": "Whether to include a photo gallery. Must be a page bundle.",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "title": "Gallery Folder",
+          "description": "Location of the photos.",
+          "name": "resources",
+          "when": {
+            "fieldRef": "gallery",
+            "operator": "eq",
+            "value": true
+          },
+          "type": "block",
+          "fieldGroup": [
+            "photo_gallery_folder"
+          ],
+          "default": "",
           "required": false
         }
       ]
-    },
+    }
+  ],
+  "frontMatter.taxonomy.fieldGroups": [
     {
-      "name": "recipe-moderate",
-      "pageBundle": true,
+      "id": "photo_gallery_folder",
+      "labelField": "name",
       "fields": [
         {
-          "title": "Title",
-          "name": "title",
-          "type": "string"
-        },
-        {
-          "title": "Draft",
-          "name": "draft",
-          "type": "draft"
-        },
-        {
-          "title": "layout",
-          "name": "layout",
+          "title": "Path to files (Ex: photos/*)",
+          "name": "src",
           "type": "string",
-          "default": "recipe",
-          "hidden": true
+          "single": true
         },
         {
-          "title": "Date",
-          "name": "date",
-          "type": "datetime",
-          "default": "{{now}}",
-          "dateFormat": "yyyy-MM-dd",
-          "hidden": true
-        },
-        {
-          "title": "Categories",
-          "name": "categories",
-          "type": "categories"
-        },
-        {
-          "title": "Tags",
-          "name": "tags",
-          "type": "tags"
-        },
-        {
-          "title": "Ingredients",
-          "name": "components",
-          "type": "list",
-          "default": [
-            "Item 1: Quantity (remove quotes)",
-            "Item 2: Quantity"
-          ]
-        },
-        {
-          "title": "References",
-          "name": "refs",
-          "type": "list",
-          "default": ""
-        },
-        {
-          "title": "Origin (person/place)",
-          "name": "origin",
+          "title": "Shortcode reference (Ex: photos)",
+          "name": "name",
           "type": "string",
-          "required": false
+          "single": true,
+          "description": "Don't forget to include a shortcode where you want the gallery in the document. Ex: {{< gallery folder=\"photos\" >}}"
         }
       ]
     }

@@ -35,15 +35,34 @@ This theme started out as a derivative of [the `hugo-lithium` theme from Yihui X
 
 The original themes were released under the MIT License by [Jonathan Rutheiser](https://github.com/jrutheiser/hugo-lithium-theme/blob/master/LICENSE.md) and [Yihui Xie](https://github.com/yihui/hugo-lithium/blob/master/LICENSE.md). This version is also released under the MIT License and includes the unmodified fuse.js software licensed under the Apache 2.0 License.
 
-# Usage
+## Usage
 
 Typical Hugo theme usage. View the example site and docs here: [**https://woodwirk.github.io/hugo-beryllium**](https://woodwirk.github.io/hugo-beryllium)
 
-## Demo the example site locally
+### Get started
 
-From the `hugo-beryllium` folder:
+If you've never used Hugo before, [check out the quick start guide](https://gohugo.io/getting-started/quick-start/).
+
+For example:
+
+1. Install Hugo
+1. Install Git
+1. Make a home for your website and set up the theme. Run these commands in your terminal:
+    ```sh
+    hugo new site mysite
+    cd mysite
+    git init
+    git submodule add https://github.com/woodwirk/hugo-beryllium.git themes/hugo-beryllium
+    cp themes/hugo-beryllium/exampleSite/config.toml config.toml
+    ```
+
+### Demo the example site locally
+
+Instead of making a new website from scratch, you could also experiment with this theme's example site.
 
 ```sh
+git clone https://github.com/woodwirk/hugo-beryllium.git
+cd hugo-beryllium
 hugo server --source="exampleSite" --themesDir="../../"
 ```
 
@@ -51,4 +70,14 @@ Build:
 
 ```sh
 hugo -d ../docs --baseURL https://woodwirk.github.io/hugo-beryllium/ --minify --source="exampleSite" --themesDir="../../"
+```
+
+### Use the Front Matter extension in VS Code
+
+I tried to work with Hugo manually for some time. Eventually it became too much to remember each time I came back after a hiatus, and it can be challenging for someone new to get acclimated. [Front Matter](https://frontmatter.codes/) takes care of that and more with a convenient sidebar GUI.
+
+This repository includes helper files for getting started with Front Matter. To take advantage of them, just copy over at least the `frontmatter.json` file into your main website folder. You can also use the `.frontmatter` folder to set up the basis for templates and other features.
+
+```sh
+cp themes/hugo-beryllium/frontmatter.json frontmatter.json
 ```
