@@ -11,6 +11,8 @@
         <span class="article-date">{{ (.).Format "2006-01-02" }}</span>
         {{ end }}
 
+        {{ partial "taglist.html" . }}
+
         {{ partial "keys.html" . }}
 
         {{ partial "toc.html" . }}

@@ -72,7 +72,7 @@ img {
 .nav-links {
   margin: 0;
   padding: 0;
-  font-size: 14px;
+  font-size: 16px;
   list-style: none;
 }
 
@@ -121,12 +121,34 @@ blockquote p {
 .article-duration {
   margin-top: 12px;
   float: right;
-  font-size: 10px;
+  font-size: 12px;
   padding: 1px 5px;
   font-weight: bold;
   border-radius: 3px;
   background: #bbb;
   color: #fff
+}
+
+.article-tag {
+  margin-left: 2px;
+  float: right;
+  font-size: 12px;
+  padding: 1px 5px;
+  font-weight: bold;
+  border-radius: 3px;
+  background: #bbb;
+  color: #fff;
+  display: none;
+}
+
+.taglist-item {
+  margin-left: 2px;
+  font-size: 12px;
+  padding: 1px 5px;
+  font-weight: bold;
+  border-radius: 3px;
+  background: #bbb;
+  color: #fff;
 }
 
 .article-content p {
@@ -172,7 +194,7 @@ blockquote p {
   padding: 0;
   list-style: none;
   line-height: 1.3em;
-  text-align: center;
+  text-align: left;
   color: #111;
 }
 
@@ -311,7 +333,16 @@ blockquote p {
   }
 
   .article-duration {
-    font-size: 12px;
+    font-size: 14px;
+  }
+
+  .article-tag {
+    font-size: 14px;
+    display: block;
+  }
+
+  .taglist-item {
+    font-size: 14px;
   }
 
   .footer-links {

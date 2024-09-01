@@ -89,6 +89,6 @@
 body {
   font-family: 'Lato', sans-serif;
 }
-h1, h2, h3, h4, h5, h6, .nav, .article-duration, .archive-item-link, .footer {
+h1, h2, h3, h4, h5, h6, .nav, .article-duration, .article-tag, .taglist, .archive-item-link, .footer {
   font-family: 'Lato', sans-serif;
 }

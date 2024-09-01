@@ -1,0 +1,44 @@
+{{ partial "header.html" . }}
+
+<main class="content list-section-template" role="main">
+
+  {{ if .Content }}
+  <article class="article">
+    {{ if .Title }}
+    <h1 class="article-title">{{ .Title }}</h1>
+    {{ end }}
+    <div class="article-content">
+      {{ .Content }}
+    </div>
+  </article>
+  {{ end }}
+
+  <div class="archive">
+  {{ if .Sections }}
+      {{ range .Sections.ByWeight }}
+      {{ if len .Pages }}
+      <h2 class="archive-title">{{ .Title }}</h2>
+      {{ range .Pages.ByTitle }}
+    <article class="archive-item">
+      <a href="{{ .RelPermalink }}" class="archive-item-link">
+        {{ with .Title }}
+          {{ . }}
+        {{ else }}
+          {{ .RelPermalink }}
+        {{ end }}
+      </a>
+      {{ if .Params.tags }}
+      {{ range first 3 .Params.tags }}
+      <a href={{ (printf "/tags/%s" .) }} style="text-decoration:none"><span class="article-tag">{{ . }}</span></a>
+      {{ end }}
+      {{ end }}
+    </article>
+    {{ end }}
+      {{ end }}
+      {{ end }}
+  {{ end }}
+  </div>
+
+</main>
+
+{{ partial "footer.html" . }}
