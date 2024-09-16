@@ -4,7 +4,7 @@
 {{ if gt (len .)  0 }}
 <div class="taglist">
 {{ range . }}
-<a href={{ (printf "/tags/%s" .) }} style="text-decoration:none"><span class="taglist-item">{{ . }}</span></a>
+<a href={{ printf "/tags/%s"  (lower .) }} style="text-decoration:none"><span class="taglist-item">{{ . }}</span></a>
 {{ end }}
 <hr style="margin-top: 0px; margin-bottom: 0px;">
 </div>

@@ -34,7 +34,7 @@
                     {{ title $item }}
                     <ul>
                         {{ range . }}
-                        <script>console.log({{ . }});</script>
+                        <!-- <script>console.log({{ . }});</script> -->
                         {{ if reflect.IsMap . }}
                         <!-- If the length is 1, it's listed as key:value -->
                         {{ if eq (len .) 1}}
@@ -85,6 +85,8 @@
             </div>
         </div>
     </article>
+
+    {{ partial "list_pages.html" . }}
 
     {{ partial "references.html" . }}
 
