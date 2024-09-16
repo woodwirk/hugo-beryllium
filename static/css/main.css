@@ -421,20 +421,45 @@ blockquote p {
   padding: 0vw 2.5vh 5vw 2.5vh;
   margin-right: 2vw;
   top: 0;
-  flex: 0 0 30;
+  flex: 1 2 1;
+  max-width: 33%;
   background-color: #f1f1f1;
   position: -webkit-sticky;
   position: sticky;
-  overflow: auto;
-  height: auto;
-  font-size: 14px;
+  font-size: 16px;
   border-radius: 5vh;
+  /* Scroll behavior */
+  /* Height must be smaller than view */
+  height: auto;
+  max-height: 80vh;
+  /* overflow: auto; */
+  overflow-x: auto;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.sidebar::-webkit-scrollbar{
+  display: none;
+}
+
+/* Gradient to indicate scrollable content */
+.sidebar:after {
+  content: '';
+  position: absolute;
+  background: linear-gradient(to bottom, transparent 0%, black 100%);
+}
+
+.sidebar ul {
+  margin-top: 0px;
 }
 
 @media screen and (max-width: 700px) {
   .sidebar {
     width: 100%;
     height: auto;
+    max-height: none;
+    max-width: none;
     position: relative;
     background-color: transparent;
     border-radius: 0px;
