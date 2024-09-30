@@ -1,12 +1,34 @@
+<!-- Label the gallery if title is provided -->
 {{ with .Get "title" }}
 <h4>{{ . }}</h4>
 {{ end }}
+
+<!-- Set folder location if it is supplied with the shortcode. -->
+<!-- Note that using the branch bundle (_index.md) format, gallery shortcode must reference folder="" or no reference folder (i.e. { {< gallery >}}) -->
+  <!-- AND the images must be at same directory level as _index.md -->
+  <!-- You can optionally use the same format for leaf bundles with index.md, but leaf bundles can use resources in a named subfolder. -->
+  {{ $folder := "*" }}
+  {{ with .Get "folder" }}
+    <!-- Does not run if folder not supplied -->
+    {{ $folder = . }} 
+  <!-- If no folder is supplied, the image resources are in the same directory as the content. -->
+  {{ end }}
+  <!-- <script>console.log({{ printf "Resources matching: %s*" $folder }});</script> -->
+  <script>console.log({{ printf "Match term = %s*" $folder }});</script>
+
 <div class="gallery" itemscope itemtype="http://schema.org/ImageGallery">
   <!-- Allowable image formats: -->
   {{ $ptypes := slice ".png" ".jpeg" ".jpg" ".tiff" ".tif" ".bmp" ".gif" }}
   
+  <script>console.log([{{ range .Page.Resources }} {{ .RelPermalink }}, {{ end }}]);</script>
+  <script>console.log("Matching resources:");</script>
+  <script>console.log({{ printf "%s*" $folder }});</script>
+  <script>console.log([ {{- range (.Page.Resources.Match (printf "%s*" ("*"))) }} {{ .RelPermalink }}, {{ end }}]);</script>
+  <script>console.log([ {{- range (.Page.Resources.Match "**") }} {{ .RelPermalink }}, {{ end }}]);</script>
+  <script>console.log([ {{- range (.Page.Resources.Match (printf "%s*" ($folder))) }} {{ .RelPermalink }}, {{ end }}]);</script>
+
   <!-- Resize and add to gallery only if in the allowable types -->
-  {{- range (.Page.Resources.Match (printf "%s*" (.Get "folder"))) }}
+  {{- range (.Page.Resources.Match (printf "%s*" ($folder))) }}
   
   {{ if in $ptypes (path.Ext .RelPermalink) }}
   {{ $thumbnail := .Resize "320x" }}
