@@ -11,6 +11,27 @@ import params from "@params";
         target.parentNode.insertBefore(sib, target)
       );
     };
+
+  // Random page
+  rp = d.querySelector('li#menu-random > a');
+  if (rp) {
+    rp.addEventListener('click', function (e) {
+      var request = new XMLHttpRequest();
+      request.open('GET', params.baseurl.concat('index.json'));
+      request.onreadystatechange = function () {
+        if (request.readyState === 4) { // Request is complete
+          if (request.status === 200) { // Request was successful
+            var pages = JSON.parse(request.response)
+            var rp = pages[Math.floor(Math.random() * pages.length)];
+            window.location = rp.uri
+          } else {
+            console.error('Error:', request.statusText);
+          }
+        }
+      };
+      request.send()
+    })
+  }
   
   
   

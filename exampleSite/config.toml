@@ -16,6 +16,9 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit\\.md$", "\\.utf8\
     name = "Search"
     url = "/#/"
     identifier = "menu-search"
+[[menu.main]]
+    name = "Random"
+    identifier = "menu-random"
 
 [params]
     description = "A website built with Hugo."
