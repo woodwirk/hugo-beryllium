@@ -95,7 +95,7 @@ import params from "@params";
               u = d.createElement('a');
               u.href = res.item.uri;
               u.target = '_blank';
-              u.innerText = res.item.title;
+              u.innerText = !res.item.title ? res.item.uri : res.item.title;
               h.appendChild(u);
               sum = d.createElement('div');
               sum.innerHTML = highlight('content', res.item.content, res.matches, 300);
