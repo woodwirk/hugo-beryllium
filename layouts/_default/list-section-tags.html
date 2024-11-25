@@ -29,7 +29,7 @@
       </a>
       {{ if .Params.tags }}
       {{ range first 3 .Params.tags }}
-      <a href={{ (printf "/tags/%s" .) }} style="text-decoration:none"><span class="article-tag">{{ . }}</span></a>
+      <a href={{ printf "/tags/%s" (lower .) }} style="text-decoration:none"><span class="article-tag">{{ . }}</span></a>
       {{ end }}
       {{ end }}
     </article>
