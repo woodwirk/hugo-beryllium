@@ -1,0 +1,1 @@
+Here are some notes without front matter included. It's just a text file with the `.md` extension.

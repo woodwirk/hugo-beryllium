@@ -36,7 +36,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit\\.md$", "\\.utf8\
     # path to the favicon, under "static"
     favicon = "icons/favicon.ico"
 
-    # taxonomy squares
+    # taxonomy squares and highlights
     backgroundColor = "#CBF8DF"
     textColor = "#555555"
 
@@ -53,9 +53,9 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit\\.md$", "\\.utf8\
   [markup.highlight]
     codeFences = false
   [markup.tableOfContents]
+    startLevel = 2
     endLevel = 3
     ordered = false
-    startLevel = 2
 
 [outputs]
     home = ["HTML", "JSON"]

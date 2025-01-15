@@ -23,7 +23,8 @@ Hugo ships with several [Built-in Shortcodes](https://gohugo.io/content-manageme
 
 ## Twitter Simple Shortcode
 
-{{< twitter_simple 1085870671291310081 >}}
+<!-- Works in v0.78; comment out for v0.140 -->
+<!-- { {< twitter_simple 1085870671291310081 >}} -->
 
 <br>
 

@@ -2,6 +2,7 @@
 title: 'Taxonomies in Hugo'
 author: woodwirk
 date: '2022-08-21'
+weight: 4
 slug: 
 categories:
   - hugo
@@ -10,7 +11,7 @@ tags:
   - organization
 toc: true
 keys:
-  - Use taxonomies
+  - Use taxonomies to organize your content beyond the file/folder structure.
 refs:
   - https://gohugo.io/content-management/taxonomies/
 ---
@@ -23,9 +24,9 @@ By default, Hugo uses tags and categories. If you want to use custom terms to or
 
 Then edit the `config.toml` file to include a section like the following.
 
-```
+```toml
 [taxonomies]
-  category = 'categories'
-  tag = 'tags'
-  author = 'author'
+  category = 'categories' # explicitly keep the default
+  tag = 'tags' # explicitly keep the default
+  author = 'author' # new
 ```
