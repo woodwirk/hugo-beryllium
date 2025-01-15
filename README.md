@@ -1,6 +1,10 @@
 # Hugo Beryllium
 
-This theme started out as a derivative of [the `hugo-lithium` theme from Yihui Xie](https://github.com/yihui/hugo-lithium). I changed the intent enough that I thought it was no longer lithium, so here it is: `hugo-beryllium`.
+This theme started out as a derivative of [the `hugo-lithium` theme from Yihui Xie](https://github.com/yihui/hugo-lithium). I changed the intent enough that I thought it was no longer lithium, so here it is: `hugo-beryllium`. 
+
+## Note
+
+Most of this theme was developed using Hugo v0.78.1/extended, which is quite old by the time you're reading this. Some features may need revision for full compatibility with current versions of Hugo.
 
 ## Features
 - Offline search (`fuse.js`)
@@ -8,8 +12,8 @@ This theme started out as a derivative of [the `hugo-lithium` theme from Yihui X
 - Visual aids for content grouping (sections, tags, categories, or other taxonomies)
     - Color specified in config file
 - Front matter references listed on content pages
-- Media features (photo gallery via PhotoSwipe)
-- Recipe content layout
+- Offline media features (photo gallery via PhotoSwipe)
+- Guide/recipe content layout
 
 ### Changes
 - Offline fonts updated. Only Lato for content but Merriweather retained
@@ -39,7 +43,23 @@ The original themes were released under the MIT License by [Jonathan Rutheiser](
 
 Typical Hugo theme usage. View the example site and docs here: [**https://woodwirk.github.io/hugo-beryllium**](https://woodwirk.github.io/hugo-beryllium)
 
-### Get started
+### Demo the example site locally
+
+Instead of making a new website from scratch, you could also experiment with this theme's example site.
+
+```sh
+git clone https://github.com/woodwirk/hugo-beryllium.git
+cd hugo-beryllium
+hugo server --source="exampleSite" --themesDir="../../"
+```
+
+Build docs:
+
+```sh
+hugo -d ../docs --baseURL https://woodwirk.github.io/hugo-beryllium/ --minify --source="exampleSite" --themesDir="../../"
+```
+
+### Get started with your own site
 
 If you've never used Hugo before, [check out the quick start guide](https://gohugo.io/getting-started/quick-start/).
 
@@ -56,25 +76,7 @@ For example:
     cp themes/hugo-beryllium/exampleSite/config.toml config.toml
     ```
 
-### Demo the example site locally
-
-Instead of making a new website from scratch, you could also experiment with this theme's example site.
-
-```sh
-git clone https://github.com/woodwirk/hugo-beryllium.git
-cd hugo-beryllium
-hugo server --source="exampleSite" --themesDir="../../"
-```
-
-Build:
-
-```sh
-hugo -d ../docs --baseURL https://woodwirk.github.io/hugo-beryllium/ --minify --source="exampleSite" --themesDir="../../"
-```
-
 ### Use the Front Matter extension in VS Code
-
-I tried to work with Hugo manually for some time. Eventually it became too much to remember each time I came back after a hiatus, and it can be challenging for someone new to get acclimated. [Front Matter](https://frontmatter.codes/) takes care of that and more with a convenient sidebar GUI.
 
 This repository includes helper files for getting started with Front Matter. To take advantage of them, just copy over at least the `frontmatter.json` file into your main website folder. You can also use the `.frontmatter` folder to set up the basis for templates and other features.
 

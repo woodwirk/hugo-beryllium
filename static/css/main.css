@@ -33,6 +33,15 @@ img {
   max-width: 100%;
 }
 
+figure {
+  text-align: center;
+  margin: 0;
+}
+
+figurecaption {
+  text-align: start;
+}
+
 .wrapper {
   /* overflow: hidden; */
   position: relative;

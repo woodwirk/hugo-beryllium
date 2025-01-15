@@ -50,9 +50,10 @@
             "single",
             "recipe",
             "section",
-            "list-section",
             "list",
             "list-title",
+            "list-section",
+            "list-section-tags",
             "home",
             "about"
           ]
@@ -183,5 +184,5 @@
       "path": "[[workspace]]/exampleSite/content"
     }
   ],
-  "frontMatter.framework.startCommand": "hugo server -D -F"
+  "frontMatter.framework.startCommand": "hugo server -D -F --source=\"exampleSite\" --themesDir=\"../../\""
 }

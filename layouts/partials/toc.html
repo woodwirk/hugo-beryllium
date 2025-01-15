@@ -1,4 +1,4 @@
-{{ if and (gt .WordCount 400 ) (.Params.toc) }}
+{{ if and (.Params.toc) ( or (gt .WordCount 400 ) ( .Params.force_toc ) ) }}
 <aside>
     <!-- <header> -->
     <h3>Contents</h3>
