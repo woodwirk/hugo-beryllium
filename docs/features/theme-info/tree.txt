@@ -1,0 +1,115 @@
+exampleSite
+|   config.toml
+|   
++---content
+|   |   about.md
+|   |   _index.md
+|   |   
+|   +---features
+|   |   |   _index.md
+|   |   |   
+|   |   +---media-examples
+|   |   |   |   _index.md
+|   |   |   |   
+|   |   |   +---audio
+|   |   |   |       danube.mp3
+|   |   |   |       index.md
+|   |   |   |       
+|   |   |   +---list-files
+|   |   |   |   |   index.md
+|   |   |   |   |   
+|   |   |   |   \---files
+|   |   |   |           A Hugo website.pdf
+|   |   |   |           pexels-allan-feitor-7555440.jpg
+|   |   |   |           pexels-anh-nguyen-16961112.jpg
+|   |   |   |           pexels-juan-felipe-ram�rez-13836756.jpg
+|   |   |   |           pexels-thibaut-tattevin-18272991.jpg
+|   |   |   |           pexels-vivian-almeida-16986855.jpg
+|   |   |   |           pexels-zeynep-sude-emek-18234040.jpg
+|   |   |   |           
+|   |   |   +---pdf
+|   |   |   |       A Hugo website.pdf
+|   |   |   |       index.md
+|   |   |   |       
+|   |   |   +---photo-figure
+|   |   |   |       index.md
+|   |   |   |       pexels-allan-feitor-7555440.jpg
+|   |   |   |       
+|   |   |   \---photo-gallery
+|   |   |       |   index.md
+|   |   |       |   
+|   |   |       \---public-domain
+|   |   |               pexels-allan-feitor-7555440.jpg
+|   |   |               pexels-anh-nguyen-16961112.jpg
+|   |   |               pexels-juan-felipe-ram�rez-13836756.jpg
+|   |   |               pexels-thibaut-tattevin-18272991.jpg
+|   |   |               pexels-vivian-almeida-16986855.jpg
+|   |   |               pexels-zeynep-sude-emek-18234040.jpg
+|   |   |               
+|   |   +---recipe-examples
+|   |   |   |   simple.md
+|   |   |   |   _index.md
+|   |   |   |   
+|   |   |   +---advanced
+|   |   |   |   |   example.md
+|   |   |   |   |   notes.md
+|   |   |   |   |   pexels-allan-feitor-7555440.jpg
+|   |   |   |   |   pexels-anh-nguyen-16961112.jpg
+|   |   |   |   |   pexels-juan-felipe-ram�rez-13836756.jpg
+|   |   |   |   |   pexels-thibaut-tattevin-18272991.jpg
+|   |   |   |   |   pexels-vivian-almeida-16986855.jpg
+|   |   |   |   |   pexels-zeynep-sude-emek-18234040.jpg
+|   |   |   |   |   _index.md
+|   |   |   |   |   
+|   |   |   |   \---example2
+|   |   |   |       |   index.md
+|   |   |   |       |   
+|   |   |   |       \---photos
+|   |   |   |               pexels-allan-feitor-7555440.jpg
+|   |   |   |               pexels-anh-nguyen-16961112.jpg
+|   |   |   |               
+|   |   |   +---moderate
+|   |   |   |       index.md
+|   |   |   |       pexels-allan-feitor-7555440.jpg
+|   |   |   |       pexels-anh-nguyen-16961112.jpg
+|   |   |   |       
+|   |   |   \---moderate-plus
+|   |   |       |   index.md
+|   |   |       |   
+|   |   |       \---public-domain
+|   |   |               pexels-allan-feitor-7555440.jpg
+|   |   |               pexels-anh-nguyen-16961112.jpg
+|   |   |               pexels-juan-felipe-ram�rez-13836756.jpg
+|   |   |               pexels-thibaut-tattevin-18272991.jpg
+|   |   |               pexels-vivian-almeida-16986855.jpg
+|   |   |               pexels-zeynep-sude-emek-18234040.jpg
+|   |   |               
+|   |   \---theme-info
+|   |           front-matter.md
+|   |           layouts.md
+|   |           settings.md
+|   |           structure.md
+|   |           _index.md
+|   |           
+|   +---hugo-example-site-files
+|   |       emoji-support.md
+|   |       markdown-syntax.md
+|   |       math-typesetting.md
+|   |       placeholder-text.md
+|   |       rich-content.md
+|   |       _index.md
+|   |       
+|   \---hugo-usage
+|       |   excluding-content.md
+|       |   taxonomy.md
+|       |   _index.md
+|       |   
+|       +---front-matter
+|       |       index.md
+|       |       
+|       \---page-bundles
+|               hugo-page-bundles.pdf
+|               index.md
+|               
+\---static
+        .gitkeep

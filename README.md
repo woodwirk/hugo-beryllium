@@ -14,6 +14,7 @@ Most of this theme was developed using Hugo v0.78.1/extended, which is quite old
 - Front matter references listed on content pages
 - Offline media features (photo gallery via PhotoSwipe)
 - Guide/recipe content layout
+- Random page button
 
 ### Changes
 - Offline fonts updated. Only Lato for content but Merriweather retained

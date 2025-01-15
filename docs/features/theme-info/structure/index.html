@@ -1,0 +1,42 @@
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=generator content="Hugo 0.78.1"><title>File structure - A Hugo website</title><meta property="og:title" content="File structure - A Hugo website"><link href=https://woodwirk.github.io/hugo-beryllium/icons/favicon.ico rel=icon type=image/x-icon><link href=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css rel=stylesheet type=text/css><link rel=stylesheet href=/hugo-beryllium/css/fonts.css media=all><link rel=stylesheet href=/hugo-beryllium/css/main.css media=all></head><body><div class=wrapper><header class=header><nav class="nav menu"><a href=/hugo-beryllium/ class=nav-logo><img src=/hugo-beryllium/icons/home_FILL0_wght400_GRAD0_opsz48.svg width=50 height=50 alt=Logo></a><ul class=nav-links><li><a href=/hugo-beryllium/about/>About</a></li><li id=menu-random><a href>Random</a></li><li id=menu-search><a href=/hugo-beryllium/#/>Search</a></li></ul></nav></header><main class="content single-template" role=main><article class=article><span class=article-duration>2 min read</span><h1 class=article-title>File structure</h1><span class=article-date>2024-01-05</span><aside><h3>Contents</h3><nav id=TableOfContents><ul><li><a href=#folders-and-files>Folders and files</a><ul><li><a href=#content>Content</a></li></ul></li><li><a href=#examples>Examples</a><ul><li><a href=#pseudo-layout>Pseudo-layout</a></li><li><a href=#this-site>This site</a></li></ul></li></ul></nav></aside><div class=article-content><h2 id=folders-and-files>Folders and files</h2><p>By default, all folders with content (sections) will show up on the home page grid. Sub-folders (sub-sections) will appear for each section page, unless a different <a href=../layouts>layout</a> is specified.</p><p>Typically a section or branch bundle is made and identified by adding an <code>_index.md</code> file.</p><h3 id=content>Content</h3><p>Content files are typically <code>index.md</code> or <code>content-name.md</code>. For more info on Hugo content in general, see <a href=../../../hugo-usage/page-bundles>here</a>.</p><p>Content files are typically written in Markdown and include front matter to indicate the title and other metadata. This theme actually allows you to include Markdown content without front matter, in case you forget or just want to record notes &ndash; though best practice is to include the metadata block at the top. The site will display Markdown files that don&rsquo;t have front matter by showing the full path of the file for linking purposes.</p><p>You can group related content for a page in common folders. See the example site&rsquo;s &ldquo;Hugo Usage&rdquo; page or Hugo&rsquo;s documentation of <a href=https://gohugo.io/content-management/page-bundles/>page bundles</a> for content organization.</p><p>Photos, audio, and PDF media are supported, as demonstrated in the <a href=../../media-examples>media examples on this site</a>.</p><p><em>If pages aren&rsquo;t showing at all on the site, check that the page you want to publish is not a draft.</em></p><h2 id=examples>Examples</h2><h3 id=pseudo-layout>Pseudo-layout</h3><p>Here&rsquo;s an example of how you might organize your site files under your main folder:</p><pre><code>- `/config.toml`
+    - Name of site, squares color, icon, etc
+- `/static/`
+- `/themes/`
+- `/content/`
+    - `_index.md`
+        - Any content you want to include above the list of sections (folders immediately under `/content/`)
+    - `about.md`
+        - With `layout: about` in the front matter
+        - Includes any content you include in the body, followed by a list of tags and categories (+links)
+    - `post/`  
+    (Blog-related content)
+    - `topic-1/`  
+    (Content related to a given topic)
+        - `standalone-content-1.md`
+        - `subtopic-1/`
+            - `index.md`
+            - `supporting-file-1.png`
+            - `supporting-file-2.pdf`
+            - `supporting-file-3.txt`
+    - `topic-2/`  
+    (Content related to a different topic)
+        - `_index.md`
+        - `subtopic-1`
+            - `_index.md`
+            - `subtopic-1a`
+                - `index.md`
+                - `supporting-file-1a.jpg`
+            - `subtopic-2a`
+                - `index.md`
+                - `supporting-file-2a.png`
+        - `subtopic-2`
+            - `_index.md`
+            - `sub-subtopic-a`
+                - `index.md`
+            - `sub-subtopic-b`
+                - `index.md`
+            - `supporting-files`
+                - `index.md`  
+                (With `headless: true` in front matter)
+                - supporting files which should not be rendered in the site, including `.md` files
+</code></pre><h3 id=this-site>This site</h3><p><a href=../tree.txt>Click here to see the folder structure used for this website.</a></p><p>You can also clone the theme repository to see for yourself.</p></div></article></main><footer class=footer><ul class=footer-links><li><a href=https://gohugo.io/ class=footer-links-kudos>Made with <img src=/hugo-beryllium/images/hugo-logo.png alt="Img link to Hugo website" width=22 height=22></a></li></ul></footer></div><script src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js></script><script src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js></script><script src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js></script><script>hljs.configure({languages:[]});hljs.initHighlightingOnLoad();</script><script src=/hugo-beryllium/js/fuse.js></script><script src=/hugo-beryllium/js/features.js></script></body></html>

@@ -17,7 +17,7 @@ The theme was forked from [@jrutheiser/hugo-lithium-theme](https://github.com/jr
 - offline fonts (`woff2`)
 - offline photo gallery from [PhotoSwipe](https://github.com/dimsemenov/PhotoSwipe)
 
-See more [here](/features).
+See more [here](/features) or [on the site repository](https://github.com/woodwirk/hugo-beryllium).
 
 ## Usage
 

@@ -1,0 +1,42 @@
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=generator content="Hugo 0.78.1"><title>Front matter parameters - A Hugo website</title><meta property="og:title" content="Front matter parameters - A Hugo website"><link href=https://woodwirk.github.io/hugo-beryllium/icons/favicon.ico rel=icon type=image/x-icon><link href=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css rel=stylesheet type=text/css><link rel=stylesheet href=/hugo-beryllium/css/fonts.css media=all><link rel=stylesheet href=/hugo-beryllium/css/main.css media=all></head><body><div class=wrapper><header class=header><nav class="nav menu"><a href=/hugo-beryllium/ class=nav-logo><img src=/hugo-beryllium/icons/home_FILL0_wght400_GRAD0_opsz48.svg width=50 height=50 alt=Logo></a><ul class=nav-links><li><a href=/hugo-beryllium/about/>About</a></li><li id=menu-random><a href>Random</a></li><li id=menu-search><a href=/hugo-beryllium/#/>Search</a></li></ul></nav></header><main class="content single-template" role=main><article class=article><span class=article-duration>2 min read</span><h1 class=article-title>Front matter parameters</h1><div>Keys:<ul style=margin-top:0%><li>Format keys list an unordered list to appear in `single` (default) and `recipe` layouts.</li></ul><hr style=margin-top:0;margin-bottom:0></div><aside><h3>Contents</h3><nav id=TableOfContents><ul><li><a href=#force_toc><code>force_toc</code></a><ul><li><a href=#usage>Usage</a></li></ul></li><li><a href=#refs><code>refs</code></a><ul><li><a href=#usage-1>Usage</a></li></ul></li><li><a href=#keys><code>keys</code></a><ul><li><a href=#usage-2>Usage</a></li></ul></li><li><a href=#components_title><code>components_title</code></a><ul><li><a href=#usage-3>Usage</a></li></ul></li><li><a href=#components><code>components</code></a><ul><li><a href=#usage-4>Usage</a></li></ul></li><li><a href=#time><code>time</code></a><ul><li><a href=#usage-5>Usage</a></li></ul></li></ul></nav></aside><div class=article-content><h2 id=force_toc><code>force_toc</code></h2><p>Force a table of contents to appear. Otherwise, TOC appears only for content longer than 400 words when <code>toc</code> is enabled.</p><h3 id=usage>Usage</h3><pre><code class=language-yaml>toc: true
+force_toc: true # or false
+</code></pre><h2 id=refs><code>refs</code></h2><p>List references in the front matter, and they will appear at the bottom of the page, after the main content. The template is included in <code>list-title</code>, <code>list</code>, <code>recipe</code>, <code>single</code> (default) layouts. It is supplied as a partial, so it can be included in other layouts.</p><p>Markdown content is processed.</p><h3 id=usage-1>Usage</h3><pre><code class=language-yaml>refs:
+    - https://gohugo.io/content-management/front-matter/ |
+      The official Hugo documentation.
+    - &quot;**Formatted** from an informal interview&quot;
+    - &quot;[Local content](./content-page)&quot;
+</code></pre><h2 id=keys><code>keys</code></h2><p>An array of bullet points to show at the top of <code>single</code> (default) and <code>recipe</code> layouts. This is a partial template that can be included in other layouts as well.</p><p>Note: Keys are not run through the Markdown processor, so avoid decorators or special formatting.</p><h3 id=usage-2>Usage</h3><pre><code class=language-yaml>keys:
+    - Format key points like an unordered list
+    - This is a key point
+    - These will appear at the top of the page for `single` and `recipe` layouts
+</code></pre><h2 id=components_title><code>components_title</code></h2><p>A heading to show at the top of the <code>recipe</code> layout sidebar.</p><p>Note: If unspecified, the list will be titled &ldquo;Elements&rdquo; at the top.</p><h3 id=usage-3>Usage</h3><pre><code class=language-yaml>components_title: Equipment
+</code></pre><h2 id=components><code>components</code></h2><p>For guides, how-to pages, and recipes using the <code>recipe</code> layout, a list of materials. There are multiple possibilities for formatting, shown below.</p><p>Note: Components <strong>are</strong> run through the Markdown processor, so formatting is allowed.</p><h3 id=usage-4>Usage</h3><h4 id=case-1---plain-elements>Case 1 - Plain elements</h4><pre><code class=language-yaml>components:
+  - A computer with terminal/shell access
+  - Web browser
+  - Hugo executable
+  - Hugo theme
+  - &quot;[Hugo quickstart](https://gohugo.io/getting-started/quick-start/)&quot;
+</code></pre><h4 id=case-2---named-elements>Case 2 - Named elements</h4><pre><code class=language-yaml>components:
+  - Shell access: 1 computer
+  - Web browser: Any
+  - Hugo executable: v0.78 or later
+  - Hugo theme: hugo-beryllium
+      &lt;br&gt;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;(_why not?_)
+  - Quickstart: &quot;[Hugo](https://gohugo.io/getting-started/quick-start/)&quot;
+</code></pre><h4 id=case-3---mixed-elements>Case 3 - Mixed elements</h4><p>If using mixed elements, the first item must not have a dash before it.</p><pre><code class=language-yaml>components:
+  Loaf:
+  - all-purpose flour: 3 cups
+  - salt: 1 tsp
+  - baking soda: 1 tsp
+  - baking powder: 1 tsp
+  - ground cinnamon: 1 tbsp
+  - eggs: 3
+  - vegetable oil: 1 cup
+  - white sugar: 2 1/4 cups
+  - vanilla extract: 3 tsp
+  - zucchini (grated): 2 cups (1 zucchini)
+  - walnuts (chopped): 1 cup
+  Equipment:
+  - 2x 900g bread tin (4x8&quot;)
+</code></pre><h2 id=time><code>time</code></h2><p>Indicate the approximate time needed in content using the <code>recipe</code> layout.</p><p>Note: This content is not formatted.</p><h3 id=usage-5>Usage</h3><pre><code class=language-yaml>time: ~2 hrs
+</code></pre></div></article><hr><div style=font-size:smaller><h2>References:</h4><ul><li><a href=https://gohugo.io/content-management/front-matter/>https://gohugo.io/content-management/front-matter/</a> | The official Hugo documentation.</li><li><strong>Formatted</strong> from an informal interview</li><li><a href=./content-page>Local content</a></li></ul></div></main><footer class=footer><ul class=footer-links><li><a href=https://gohugo.io/ class=footer-links-kudos>Made with <img src=/hugo-beryllium/images/hugo-logo.png alt="Img link to Hugo website" width=22 height=22></a></li></ul></footer></div><script src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js></script><script src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js></script><script src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js></script><script>hljs.configure({languages:[]});hljs.initHighlightingOnLoad();</script><script src=/hugo-beryllium/js/fuse.js></script><script src=/hugo-beryllium/js/features.js></script></body></html>

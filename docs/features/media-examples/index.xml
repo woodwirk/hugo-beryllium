@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Media Usage on A Hugo website</title><link>https://woodwirk.github.io/hugo-beryllium/features/media-examples/</link><description>Recent content in Media Usage on A Hugo website</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 14 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://woodwirk.github.io/hugo-beryllium/features/media-examples/index.xml" rel="self" type="application/rss+xml"/><item><title>Shortcode - List files</title><link>https://woodwirk.github.io/hugo-beryllium/features/media-examples/list-files/</link><pubDate>Sun, 14 Jan 2024 00:00:00 +0000</pubDate><guid>https://woodwirk.github.io/hugo-beryllium/features/media-examples/list-files/</guid><description>Maybe you don&amp;rsquo;t need to visualize files. You just display a list of links (like an Apache2 server).
+Use a shortcode like the gallery template.
+Snippet:
+{ {&amp;lt; list-files folder=&amp;quot;files&amp;quot; &amp;gt;} }
+In order to display the shortcode above, additional spacing was necessary. The real shortcode should have braces without a middle space, like {{ and }}.
+(Note: This won&amp;rsquo;t work with Markdown files because they&amp;rsquo;re processed by Hugo.)</description></item><item><title>Embed a PDF</title><link>https://woodwirk.github.io/hugo-beryllium/features/media-examples/pdf/</link><pubDate>Tue, 26 Sep 2023 00:00:00 +0000</pubDate><guid>https://woodwirk.github.io/hugo-beryllium/features/media-examples/pdf/</guid><description>Snippet:
+&amp;lt;object data=&amp;quot;A Hugo website.pdf&amp;quot; type=&amp;quot;application/pdf&amp;quot; width=&amp;quot;90%&amp;quot; height=&amp;quot;1000px&amp;quot;&amp;gt;
+&amp;lt;embed src=&amp;quot;A Hugo website.pdf&amp;quot;&amp;gt;
+&amp;lt;!--&amp;lt;p&amp;gt;This browser does not support PDFs. Please download the PDF to view it: &amp;lt;a href=&amp;quot;http://yoursite.com/the.pdf&amp;quot;&amp;gt;Download PDF&amp;lt;/a&amp;gt;.&amp;lt;/p&amp;gt;--&amp;gt;
+&amp;lt;/embed&amp;gt;
+&amp;lt;/object&amp;gt;
+This browser does not support PDFs. Please download the PDF to view it: Download PDF.
+--</description></item><item><title>Embed an audio recording</title><link>https://woodwirk.github.io/hugo-beryllium/features/media-examples/audio/</link><pubDate>Tue, 26 Sep 2023 00:00:00 +0000</pubDate><guid>https://woodwirk.github.io/hugo-beryllium/features/media-examples/audio/</guid><description>Snippet:
+&amp;lt;audio controls controlsList=&amp;quot;nodownload&amp;quot;&amp;gt;&amp;lt;source src = &amp;quot;danube.mp3&amp;quot;&amp;gt;&amp;lt;/audio&amp;gt;
+Strauss, Johann, et al. Blue Danube waltz. 1912. Audio. Retrieved from the Library of Congress, &amp;lt;www.loc.gov/item/jukebox-118067/&amp;gt;.</description></item><item><title>Photos as figure with caption</title><link>https://woodwirk.github.io/hugo-beryllium/features/media-examples/photo-figure/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://woodwirk.github.io/hugo-beryllium/features/media-examples/photo-figure/</guid><description>There are a couple of ways to include a photo or gif in your content.
+Standard Markdown This is easy and familiar, but it doesn&amp;rsquo;t give you much control over the image.
+![a photo](pexels-allan-feitor-7555440.jpg)
+Figure shortcode To adjust the image size, include a figure instead of using Markdown. You can also specify a caption for the image. This theme is configured to center the image and caption.
+{ {&amp;lt; figure src=&amp;quot;pexels-allan-feitor-7555440.</description></item><item><title>Shortcode - Photo gallery</title><link>https://woodwirk.github.io/hugo-beryllium/features/media-examples/photo-gallery/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://woodwirk.github.io/hugo-beryllium/features/media-examples/photo-gallery/</guid><description>Photoswipe provides image gallery functionality. A version is archived in this repository/theme for offline use.
+Images will be displayed in a nested layout. Click one to expand it and show at full resolution.
+Snippet:
+{ {&amp;lt; gallery folder=&amp;quot;public-domain&amp;quot; &amp;gt;} }
+# or
+{ {&amp;lt; gallery folder=&amp;quot;public-domain&amp;quot; title=&amp;quot;Name of header&amp;quot;&amp;gt;} }
+Note: In order for Hugo to display the shortcode above without rendering it, additional spacing was necessary. The real shortcode should have braces without a middle space, like {{ and }}, with their respective &amp;lt;&amp;gt; characters.</description></item></channel></rss>
