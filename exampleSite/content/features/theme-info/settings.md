@@ -26,6 +26,25 @@ If building for GitHub pages, you may need to specify the full URL for `baseurl`
 
 If building for another service, like AWS, you may be able to just use `baseurl = "/"`
 
+**Note:**
+If you are setting a base URL that has a path after the domain (e.g. `https://woodwirk.github.io/hugo-beryllium/` instead of `https://woodwirk.github.io/`), you should avoid using regular Markdown links to reference pages on the same site starting with `/` -- use a Hugo shortcode to reference the page.
+
+Don't use:
+```md
+[Link](/about)
+```
+
+Use this instead:
+```md
+[Link]( { {< ref "/about" >}})
+<!-- Extra space between { { for rendering purposes only! -->
+```
+
+Notes:
+- Omit the space between the first two braces -- it should be formatted like `{{`
+- Don't use a trailing slash after the page reference -- `/about`, not `/about/`
+- Keep the spaces between the curly braces and the parentheses -- `( {`, not `({`
+
 ## Menu items
 
 ## Site description
@@ -61,7 +80,7 @@ Hugo uses `tags` and `categories` as the default taxonomy terms. The search func
 
 If you want additional pages on the website, you can configure them like the following "Author" example. Add a new section starting at no indentation in `config.toml`.
 
-See more info on [the example site](/hugo-usage/taxonomy/) and [official documentation](https://gohugo.io/content-management/taxonomies/).
+See more info on [the example site]( {{< ref "/hugo-usage/taxonomy" >}} ) and [official documentation](https://gohugo.io/content-management/taxonomies/).
 
 ```toml
 [taxonomies]

@@ -30,7 +30,7 @@ Based on the `single` page layout.
 
 Includes components in a sidebar and content in a main panel. If the recipe layout is used on `_index.md` files with other content files in the same folder, those files will be linked at the bottom of the page.
 
-There are multiple ways to use the recipe layout and organize the sidebar contents, as shown by the different front matter organization in [the recipe examples](/features/recipe-examples/).
+There are multiple ways to use the recipe layout and organize the sidebar contents, as shown by the different front matter organization in [the recipe examples]( {{< ref "/features/recipe-examples" >}} ).
 
 
 ```yaml

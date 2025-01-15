@@ -16,7 +16,7 @@ refs:
   - https://gohugo.io/content-management/taxonomies/
 ---
 
-One way to organize the content in your notes and on the site is though taxonomies like tags and categories. This site will automatically show all of your taxonomy terms on the [about page](/about/).
+One way to organize the content in your notes and on the site is though taxonomies like tags and categories. This site will automatically show all of your taxonomy terms on the [about page]( {{< ref "/about" >}} ).
 
 By default, Hugo uses tags and categories. If you want to use custom terms to organize your site, define your own terms in the format:
 

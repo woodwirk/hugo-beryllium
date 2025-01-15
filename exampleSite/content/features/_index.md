@@ -3,7 +3,7 @@ title: hugo-beryllium Features
 layout: list-section
 ---
 
-Try changing the [layout](/features/theme-info/layouts) of this page between the following:
+Try changing the [layout]( {{< ref "/features/theme-info/layouts" >}} ) of this page between the following:
 
 - `section`
     - List squares linking to nested sections (folders with `_index.md` at the top). List regular pages at the same level below them, in date grouping/order.

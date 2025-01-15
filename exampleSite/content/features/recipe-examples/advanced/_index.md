@@ -35,7 +35,7 @@ keys:
 
 1. Install a version of Hugo on your computer
 1. Install git (or download a Hugo theme directly)
-1. Follow the Hugo quickstart guide or the setup on the [About](/about) page
+1. Follow the Hugo quickstart guide or the setup on the [About]( {{< ref "about" >}} ) page
     - If you're not using the `git submodule` approach, you will need to adapt the quickstart to your configuration.
 1. If you don't want to use the `hugo` terminal commands, you can also create text file content directly.
 {{< figure src="pexels-allan-feitor-7555440.jpg" title="A photo from Pexels, in the public domain." width="50%" >}}

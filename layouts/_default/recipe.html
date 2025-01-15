@@ -15,8 +15,8 @@
         <span class="article-date">{{ (.).Format "2006-01-02" }}</span>
         {{ end }}
 
-        {{ partial "taglist.html" . }}
-
+        {{ partial "taglist.html" (dict "context" . "baseurl" .Site.BaseURL) }}
+        
         {{ partial "keys.html" . }}
 
         {{ partial "toc.html" . }}

@@ -1,10 +1,13 @@
-{{ with .Params.tags }}
+<!-- Need to pass multiple parameters to this shortcode -- context and base URL -->
+<!-- https://discourse.gohugo.io/t/access-root-context-from-within-a-partial/15779/6 -->
+{{ $baseurl := .baseurl }}
+{{ with .context.Params.tags }}
 <!-- <script>console.log({{ . }});</script> -->
 
 {{ if gt (len .)  0 }}
 <div class="taglist">
 {{ range . }}
-<a href={{ printf "/tags/%s"  (lower .) }} style="text-decoration:none"><span class="taglist-item">{{ . }}</span></a>
+<a href={{ printf "%stags/%s" $baseurl (lower .) }} style="text-decoration:none"><span class="taglist-item">{{ . }}</span></a>
 {{ end }}
 <hr style="margin-top: 0px; margin-bottom: 0px;">
 </div>
