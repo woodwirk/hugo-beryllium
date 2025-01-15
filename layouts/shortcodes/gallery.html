@@ -13,20 +13,11 @@
     {{ $folder = . }} 
   <!-- If no folder is supplied, the image resources are in the same directory as the content. -->
   {{ end }}
-  <!-- <script>console.log({{ printf "Resources matching: %s*" $folder }});</script> -->
-  <script>console.log({{ printf "Match term = %s*" $folder }});</script>
 
 <div class="gallery" itemscope itemtype="http://schema.org/ImageGallery">
   <!-- Allowable image formats: -->
   {{ $ptypes := slice ".png" ".jpeg" ".jpg" ".tiff" ".tif" ".bmp" ".gif" }}
   
-  <script>console.log([{{ range .Page.Resources }} {{ .RelPermalink }}, {{ end }}]);</script>
-  <script>console.log("Matching resources:");</script>
-  <script>console.log({{ printf "%s*" $folder }});</script>
-  <script>console.log([ {{- range (.Page.Resources.Match (printf "%s*" ("*"))) }} {{ .RelPermalink }}, {{ end }}]);</script>
-  <script>console.log([ {{- range (.Page.Resources.Match "**") }} {{ .RelPermalink }}, {{ end }}]);</script>
-  <script>console.log([ {{- range (.Page.Resources.Match (printf "%s*" ($folder))) }} {{ .RelPermalink }}, {{ end }}]);</script>
-
   <!-- Resize and add to gallery only if in the allowable types -->
   {{- range (.Page.Resources.Match (printf "%s*" ($folder))) }}
   
